@@ -1,0 +1,74 @@
+﻿<Window x:Class="demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Товары" Height="550" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Фильтры -->
+            <RowDefinition Height="Auto"/>
+            <!-- Кнопки -->
+            <RowDefinition Height="*"/>
+            <!-- Список -->
+        </Grid.RowDefinitions>
+
+        <!-- Панель фильтрации -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="SearchBox"
+                     Width="200"
+                     Margin="0,0,10,0"
+                     TextChanged="SearchBox_TextChanged" />
+            <ComboBox x:Name="SupplierFilter"
+                      Width="150"
+                      SelectionChanged="SupplierFilter_SelectionChanged">
+                <ComboBoxItem Content="Все поставщики" Tag=""/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Кнопки управления -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10,0">
+            <Button Content="Добавить" Width="80" Margin="0,0,5,0" Click="AddButton_Click"/>
+            <Button Content="Редактировать" Width="100" Margin="0,0,5,0" Click="EditButton_Click"/>
+            <Button Content="Удалить" Width="80" Click="DeleteButton_Click"/>
+        </StackPanel>
+
+        <!-- Список товаров -->
+        <ListBox x:Name="ProductList" Grid.Row="2" Margin="0,5,0,0">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Margin" Value="0,5"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="#E51919" BorderThickness="2"
+                            CornerRadius="12" Background="White" Margin="8,4">
+                        <Grid Height="90" Width="700" Margin="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="90"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding Фото}" Stretch="UniformToFill" Margin="8"/>
+
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="10,0">
+                                <TextBlock>
+                                    <Run Text="{Binding IdНаименованиеТовараNavigation.НаименованиеТовара1, TargetNullValue='—'}"/>
+                                    <Run Text=" | "/>
+                                    <Run Text="{Binding IdКатегорияТовараNavigation.КатегорияТовара1, TargetNullValue='—'}"/>
+                                </TextBlock>
+                                <TextBlock Text="{Binding IdПоставщикNavigation.Поставщик1, TargetNullValue='—'}"/>
+                            </StackPanel>
+
+                            <TextBlock Grid.Column="2"
+                                       Text="{Binding ДействующаяСкидка, StringFormat={}{0}%}"
+                                       FontWeight="Bold" FontSize="16"
+                                       VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

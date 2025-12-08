@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="10.jpg" />
+    <None Remove="2.jpg" />
+    <None Remove="3.jpg" />
+    <None Remove="4.jpg" />
+    <None Remove="5.jpg" />
+    <None Remove="6.jpg" />
+    <None Remove="7.jpg" />
+    <None Remove="8.jpg" />
+    <None Remove="9.jpg" />
+    <None Remove="Icon.ico" />
+    <None Remove="Icon.JPG" />
+    <None Remove="Icon.png" />
+    <None Remove="picture.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="1.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="10.jpg" />
+    <Resource Include="2.jpg" />
+    <Resource Include="3.jpg" />
+    <Resource Include="4.jpg" />
+    <Resource Include="5.jpg" />
+    <Resource Include="6.jpg" />
+    <Resource Include="7.jpg" />
+    <Resource Include="8.jpg" />
+    <Resource Include="9.jpg" />
+    <Resource Include="Icon.ico" />
+    <Resource Include="Icon.JPG" />
+    <Resource Include="Icon.png" />
+    <Resource Include="picture.png" />
+  </ItemGroup>
+
+</Project>

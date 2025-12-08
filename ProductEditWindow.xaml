@@ -1,0 +1,44 @@
+﻿<Window x:Class="demo.ProductEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Товар" Height="550" Width="400"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <!-- Кнопки -->
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Артикул:"/>
+        <TextBox x:Name="ArtikulBox" Grid.Row="1" Margin="0,2"/>
+
+        <TextBlock Grid.Row="2" Text="Поставщик:"/>
+        <ComboBox x:Name="SupplierBox" Grid.Row="3" DisplayMemberPath="Поставщик1" Margin="0,2"/>
+
+        <TextBlock Grid.Row="4" Text="Категория:"/>
+        <ComboBox x:Name="CategoryBox" Grid.Row="5" DisplayMemberPath="КатегорияТовара1" Margin="0,2"/>
+
+        <TextBlock Grid.Row="6" Text="Цена:"/>
+        <TextBox x:Name="PriceBox" Grid.Row="7" Margin="0,2"/>
+
+        <!-- Картинка -->
+        <Image x:Name="PreviewImage" Grid.Row="8" Height="150" Stretch="Uniform" Margin="0,5"/>
+        <Button Content="Выбрать фото..." Grid.Row="8" VerticalAlignment="Bottom"
+                Click="SelectImage_Click"/>
+
+        <!-- Кнопки сохранить / отмена -->
+        <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+            <Button Content="Сохранить" Width="80" Margin="0,0,10,0" Click="SaveButton_Click"/>
+            <Button Content="Отмена" Width="80" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,18 @@
+﻿<Window x:Class="demo.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:demo"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+    <Grid>
+        <TextBox x:Name="LoginTextBox" HorizontalAlignment="Left" Margin="280,157,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PasswordTextBox" HorizontalAlignment="Left" Margin="280,217,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="Логин" HorizontalAlignment="Left" Margin="280,133,0,0" VerticalAlignment="Top"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="280,191,0,0" VerticalAlignment="Top"/>
+        <Label Content="Вход" HorizontalAlignment="Left" Margin="318,92,0,0" VerticalAlignment="Top"/>
+        <Button Content="Войти" Click="Login_Click" HorizontalAlignment="Left" Margin="280,255,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,2 @@
+Scaffold-DbContext Server-DESKTOP-9146370;Database-NEWdb; Trusted_Connection True; TrustServerCertificate-True;"
+Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context AppDbContext -Force
